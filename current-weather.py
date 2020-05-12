@@ -9,8 +9,11 @@ def get_current_weather(location_code):
 	return r.text
 
 def get_element(root, element_name):
-	element_data = root.find(element_name)
-	return element_data.text
+	try:
+		element_data = root.find(element_name)
+		return element_data.text
+	except:
+		return "N/A"
 
 parser = argparse.ArgumentParser()
 parser.add_argument("location_code", help="Location code, e.g., 'KDAY'")
