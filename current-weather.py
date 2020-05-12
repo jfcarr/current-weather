@@ -20,4 +20,4 @@ content = get_current_weather(args.location_code)
 
 root = ET.fromstring(content)
 
-print(f"{get_element(root,'weather')}, {get_element(root,'temperature_string')}\nWind: {get_element(root,'wind_string')}\n(Weather) {get_element(root,'observation_time')}")
+print(f"{get_element(root,'weather')}, {get_element(root,'temp_f')} F (windchill {get_element(root,'windchill_f')} F)\nWind: {get_element(root,'wind_string')}\n(Weather) {get_element(root,'observation_time')}")
