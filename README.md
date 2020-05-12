@@ -4,17 +4,18 @@ Gets current weather conditions from the NOAA website, and displays them in a si
 
 ## Prerequisites
 
-Perl v5, with the following libraries:
+Python 3, with the following libraries:
 
-* REST::Client
-* XML::Simple
+* argparse
+* requests
+* xml.etree.ElementTree
 
 ## Usage
 
 Call the script with a location code; example:
 
 ```bash
-current-weather.pl KDAY
+current-weather.py KDAY
 ```
 
 Displays current weather conditions for the KDAY location code (Cox International Airport in Dayton, Ohio); example:
