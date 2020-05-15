@@ -31,9 +31,6 @@ cw = CurrentWeather(args.location_code)
 cw.get_current_weather()
 
 windchill_info = cw.get_element('windchill_f')
-if windchill_info == "N/A":
-	windchill_string = ""
-else:
-	windchill_string = f" (windchill {windchill_info} F)"
+windchill_string = "" if windchill_info == "N/A" else f" (windchill {windchill_info} F)"
 
 print(f"{cw.get_element('weather')}, {cw.get_element('temp_f')} F{windchill_string}\nWind: {cw.get_element('wind_string')}\n(Weather) {cw.get_element('observation_time')}")
