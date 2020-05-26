@@ -60,4 +60,4 @@ feels_like = cw.get_feels_like_temp()
 
 feels_like_string = "" if current_temperature == feels_like else f" (feels like {feels_like} F)"
 
-print(f"{cw.get_element('weather')}, {cw.get_element('temp_f')} F{feels_like_string}\nWind: {cw.get_element('wind_string')}\n(Weather) {cw.get_element('observation_time')}")
+print(f"{cw.get_element('weather')}, {cw.get_element('temp_f')} F{feels_like_string}\nWind: {cw.get_element('wind_string')}\nWeather: {cw.get_element('observation_time')}")
