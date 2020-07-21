@@ -25,7 +25,10 @@ class CurrentWeather:
 
 	def get_apparent_temperature(self):
 		temperature = float(self.get_element('temp_f'))
-		wind_speed = float(self.get_element('wind_mph'))
+		if self.get_element('wind_mph') != 'N/A':
+			wind_speed = float(self.get_element('wind_mph'))
+		else:
+			wind_speed = 0
 		relative_humidity = float(self.get_element('relative_humidity'))
 
 		apparent_temperature = temperature
