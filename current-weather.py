@@ -58,8 +58,8 @@ cw = CurrentWeather(args.location_code)
 
 cw.get_current_weather()
 
-current_temperature = float(cw.get_element('temp_f'))
-apparent_temperature = cw.get_apparent_temperature()
+current_temperature = -99 if cw.get_element('temp_f') == 'N/A' else float(cw.get_element('temp_f'))
+apparent_temperature = current_temperature if current_temperature == -99 else cw.get_apparent_temperature()
 
 apparent_temperature_string = "" if current_temperature == apparent_temperature else f" (feels like {apparent_temperature} F)"
 
